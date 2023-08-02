@@ -30,11 +30,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.post('/login', (req, res) => {
-    console.log(req.body)
-    
-    res.send("hello")
-})
+const {login} = require('./Handlers/login')
+app.post('/login', login)
 
 
 app.listen(settings.port, () => {
